@@ -1,2 +1,6 @@
 .container
-  h1 Hello
+  div
+    ul
+      li(ng-repeat="recommendation in recommendations track by recommendation.id")
+        h4 {{recommendation.title}}
+        span {{recommendation.description}}
