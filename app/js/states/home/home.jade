@@ -6,8 +6,9 @@
         span {{recommendation.description}}
         br
         br
-        strong Type: 
-        span {{recommendation.type.title}}
-        br
-        strong Tags: 
-        span.label.label-primary.tag(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} | {{tag.score}} 
+        div
+          strong Type: 
+          span {{recommendation.type.title}}
+        div(ng-if="recommendation.tags.length")
+          strong Tags: 
+          span.label.label-primary.tag(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} | {{tag.score}} 
