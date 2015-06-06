@@ -1,4 +1,4 @@
-.container
+.container.recommendations
   div
     ul.list-group
       li.list-group-item(ng-repeat="recommendation in recommendations track by recommendation.id")
@@ -10,4 +10,4 @@
         span {{recommendation.type.title}}
         br
         strong Tags: 
-        span.label.label-primary(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} 
+        span.label.label-primary.tag(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} | {{tag.score}} 
