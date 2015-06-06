@@ -1,9 +1,10 @@
+// Base Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
 // Include Settings / Functions
 //==================================================================*/
 @import 'compass';
 @import 'breakpoint';
-
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 // Include Elements
 //==================================================================*/
