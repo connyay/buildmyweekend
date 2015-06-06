@@ -1,6 +1,13 @@
 .container
   div
-    ul
-      li(ng-repeat="recommendation in recommendations track by recommendation.id")
+    ul.list-group
+      li.list-group-item(ng-repeat="recommendation in recommendations track by recommendation.id")
         h4 {{recommendation.title}}
         span {{recommendation.description}}
+        br
+        br
+        strong Type: 
+        span {{recommendation.type.title}}
+        br
+        strong Tags: 
+        span.label.label-primary(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} 
