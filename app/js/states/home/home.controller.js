@@ -14,6 +14,10 @@ function HomeCtrl(Recommendations, WeekendService) {
     });
 
     vm.addRecommendation = WeekendService.addRecommendation;
+
+    vm.notInWeekend = function(recommendation) {
+        console.log(recommendation);
+    };
 }
 
 statesModule.controller('HomeCtrl', HomeCtrl);

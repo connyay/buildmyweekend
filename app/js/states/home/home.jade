@@ -3,7 +3,7 @@
     .col-xs-6
       h3 Things to do
       ul.list-group.recommendations
-        li.list-group-item(ng-repeat="recommendation in home.recommendations track by recommendation.id")
+        li.list-group-item(ng-repeat="recommendation in home.recommendations | weekendFilter:home.weekend track by recommendation.id")
           h4 
             span.actions.pull-right
               i.pointer.fa.fa-arrow-right(ng-click="home.addRecommendation(recommendation)")
@@ -18,7 +18,7 @@
     .col-xs-6
       h3 Your Weekend
       ul.list-group
-        li.list-group-item(ng-repeat="recommendation in home.weekend.items")
+        li.list-group-item(ng-repeat="recommendation in home.weekend.items track by recommendation.id")
           h4 
             a(href="{{recommendation.url}}", target="_blank") {{recommendation.title}}
           span {{recommendation.description}}
