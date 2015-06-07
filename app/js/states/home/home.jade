@@ -2,7 +2,8 @@
   div
     ul.list-group
       li.list-group-item(ng-repeat="recommendation in recommendations track by recommendation.id")
-        h4 {{recommendation.title}}
+        h4 
+          a(href="{{recommendation.url}}", target="_blank") {{recommendation.title}}
         span {{recommendation.description}}
         br
         br
