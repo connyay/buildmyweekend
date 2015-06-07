@@ -1,15 +1,26 @@
-.container.recommendations
-  div
-    ul.list-group
-      li.list-group-item(ng-repeat="recommendation in recommendations track by recommendation.id")
-        h4 
-          a(href="{{recommendation.url}}", target="_blank") {{recommendation.title}}
-        span {{recommendation.description}}
-        br
-        br
-        div
-          strong Type: 
-          span {{recommendation.type.title}}
-        div(ng-if="recommendation.tags.length")
-          strong Tags: 
-          span.label.label-primary.tag(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} | {{tag.score}} 
+.container
+  .row
+    .col-xs-6
+      h3 Things to do
+      ul.list-group.recommendations
+        li.list-group-item(ng-repeat="recommendation in home.recommendations track by recommendation.id")
+          h4 
+            span.actions.pull-right
+              i.pointer.fa.fa-arrow-right(ng-click="home.addRecommendation(recommendation)")
+            a(href="{{recommendation.url}}", target="_blank") {{recommendation.title}}
+          span {{recommendation.description}}
+          .meta
+              strong Type: 
+              span {{recommendation.type.title}}
+            div(ng-if="recommendation.tags.length")
+              strong Tags: 
+              span.label.label-primary.tag(ng-repeat="tag in recommendation.tags track by tag.id", ng-class) {{tag.title}} | {{tag.score}} 
+    .col-xs-6
+      h3 Your Weekend
+      ul.list-group
+        li.list-group-item(ng-repeat="recommendation in home.weekend.items")
+          h4 
+            a(href="{{recommendation.url}}", target="_blank") {{recommendation.title}}
+          span {{recommendation.description}}
+        li.list-group-item(ng-hide="home.weekend.items.length")
+          h5 You haven't picked any recommendations yet!

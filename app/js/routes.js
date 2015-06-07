@@ -8,7 +8,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
         .state('home', {
             url: '/',
             templateUrl: 'js/states/home/home.html',
-            controller: 'HomeCtrl'
+            controller: 'HomeCtrl as home'
         });
 
 }

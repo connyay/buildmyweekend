@@ -5,10 +5,15 @@ var statesModule = require('../');
 /**
  * @ngInject
  */
-function HomeCtrl($scope, Recommendations) {
+function HomeCtrl(Recommendations, WeekendService) {
+    var vm = this;
+    vm.weekend = WeekendService.weekend;
+
     Recommendations.getRecommendations().success(function (recommendations) {
-        $scope.recommendations = recommendations;
+        vm.recommendations = recommendations;
     });
+
+    vm.addRecommendation = WeekendService.addRecommendation;
 }
 
 statesModule.controller('HomeCtrl', HomeCtrl);
